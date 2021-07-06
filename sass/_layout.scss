@@ -1,104 +1,120 @@
 .cards {
-    width: 74%;
-    margin: toRem(10);
-    border-radius: toRem(8);
+    width: 100%;
+    max-width: toRem(550);
+    padding-right: toRem(30);
+    padding-left: toRem(30);
     overflow: hidden;
 
-    @include breakpoint(sm) {
-        width: 60%;
-    }
-
-    @include breakpoint(lg) {
-        width: 70%;
+    @include breakpoint(md) {
+        max-width: toRem(1350);
         display: flex;
         flex-direction: row;
-    }
-    @include breakpoint(xl) {
-        width: 36%;
     }
 }
 
 .card {
-    padding: toRem(40) toRem(50) toRem(40) toRem(40);
+    padding: toRem(40);
 
-    @include breakpoint(sm) {
-        padding: toRem(35) toRem(180) toRem(35) toRem(60);
+    &:first-child {
+        border-top-left-radius: toRem(8);
+        border-top-right-radius: toRem(8);
     }
 
-    @include breakpoint(lg) {
+    &:last-child {
+        border-bottom-left-radius: toRem(8);
+        border-bottom-right-radius: toRem(8);
+    }
+
+    @include breakpoint(md) {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        min-height: 30vh;
+        align-items: flex-start;
+        width: (100% / 3);
         padding: toRem(50);
-    }
 
-    &--orange {
-        background-color: $primary-color;
-        color: $primary-color;
-    }
-    &--lightgreen {
-        background-color: $secondary-color;
-        color: $secondary-color;
-    }
-    &--green {
-        background-color: $tertiary-color;
-        color: $tertiary-color;
-    }
-
-    &__icon {
-        width: toRem(55);
-
-        @include breakpoint(lg) {
-            width: toRem(60);
+        &:first-child {
+            border-top-left-radius: toRem(8);
+            border-bottom-left-radius: toRem(8);
+            border-top-right-radius: 0;
         }
-    }
-
-    &__title {
-        margin: toRem(25) 0;
-        color: $light-color;
-        font-size: 2rem;
-        font-family: $heading-font;
-        text-transform: uppercase;
-
-        @include breakpoint(lg) {
-            margin: 0;
-            font-size: 2.7rem;
-        }
-    }
-
-    &__info {
-        margin-bottom: toRem(20);
-        font-size: 0.8rem;
-        line-height: 1.7;
-        color: $paragraphs-color;
-
-        @include breakpoint(lg) {
-            margin-bottom: toRem(50);
-            font-size: 0.9rem;
-            line-height: 1.8;
-        }
-    }
-
-    .btn {
-        width: 120px;
-        height: 40px;
-        border-radius: 50px;
-        border: none;
-        background-color: $light-color;
-        font-family: $primary-font, sans-serif;
-        color: inherit;
-
-        &:hover {
-            border: 1px solid $light-color;
-            color: $light-color;
-            background-color: transparent;
-            cursor: pointer;
+    
+        &:last-child {
+            border-bottom-left-radius: 0;
+            border-top-right-radius: toRem(8);
+            border-bottom-right-radius: toRem(8);
         }
 
-        @include breakpoint(lg) {
-            width: 140px;
-            height: 45px;
+        .btn {
+            justify-self: flex-end;
         }
     }
 }
+
+.card--orange {
+    background-color: $primary-color;
+    color: $primary-color;
+}
+
+.card--lightgreen {
+    background-color: $secondary-color;
+    color: $secondary-color;
+}
+
+.card--green {
+    background-color: $tertiary-color;
+    color: $tertiary-color;
+}
+
+.card__icon {
+    width: toRem(55);
+
+    @include breakpoint(md) {
+        width: toRem(60);
+    }
+}
+
+.card__title {
+    margin: toRem(25) 0;
+    color: $light-color;
+    font-size: 2rem;
+    font-family: $heading-font;
+    text-transform: uppercase;
+
+    @include breakpoint(md) {
+        font-size: 2.7rem;
+    }
+}
+
+.card__info {
+    margin-bottom: toRem(50);
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: $paragraphs-color;
+
+    @include breakpoint(md) {
+        font-size: 0.9rem;
+        line-height: 1.8;
+        flex-grow: 1;
+    }
+}
+
+.btn {
+    padding: toRem(15) toRem(20);
+    display: inline-block;
+    min-width: 120px;
+    min-height: 40px;
+    border-radius: 50px;
+    border: none;
+    background-color: $light-color;
+    font-family: $primary-font, sans-serif;
+    color: inherit;
+    border: 1px solid white;
+
+    &:hover {
+        border-color: $light-color;
+        color: $light-color;
+        background-color: transparent;
+        cursor: pointer;
+    }
+}
+
