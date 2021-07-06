@@ -1,0 +1,12 @@
+body {
+    background-color: $light-color;
+    font-family: $primary-font, sans-serif;
+    font-size: $base-font-size;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}

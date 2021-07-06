@@ -1,0 +1,104 @@
+.cards {
+    width: 74%;
+    margin: toRem(10);
+    border-radius: toRem(8);
+    overflow: hidden;
+
+    @include breakpoint(sm) {
+        width: 60%;
+    }
+
+    @include breakpoint(lg) {
+        width: 70%;
+        display: flex;
+        flex-direction: row;
+    }
+    @include breakpoint(xl) {
+        width: 36%;
+    }
+}
+
+.card {
+    padding: toRem(40) toRem(50) toRem(40) toRem(40);
+
+    @include breakpoint(sm) {
+        padding: toRem(35) toRem(180) toRem(35) toRem(60);
+    }
+
+    @include breakpoint(lg) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 30vh;
+        padding: toRem(50);
+    }
+
+    &--orange {
+        background-color: $primary-color;
+        color: $primary-color;
+    }
+    &--lightgreen {
+        background-color: $secondary-color;
+        color: $secondary-color;
+    }
+    &--green {
+        background-color: $tertiary-color;
+        color: $tertiary-color;
+    }
+
+    &__icon {
+        width: toRem(55);
+
+        @include breakpoint(lg) {
+            width: toRem(60);
+        }
+    }
+
+    &__title {
+        margin: toRem(25) 0;
+        color: $light-color;
+        font-size: 2rem;
+        font-family: $heading-font;
+        text-transform: uppercase;
+
+        @include breakpoint(lg) {
+            margin: 0;
+            font-size: 2.7rem;
+        }
+    }
+
+    &__info {
+        margin-bottom: toRem(20);
+        font-size: 0.8rem;
+        line-height: 1.7;
+        color: $paragraphs-color;
+
+        @include breakpoint(lg) {
+            margin-bottom: toRem(50);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+    }
+
+    .btn {
+        width: 120px;
+        height: 40px;
+        border-radius: 50px;
+        border: none;
+        background-color: $light-color;
+        font-family: $primary-font, sans-serif;
+        color: inherit;
+
+        &:hover {
+            border: 1px solid $light-color;
+            color: $light-color;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        @include breakpoint(lg) {
+            width: 140px;
+            height: 45px;
+        }
+    }
+}

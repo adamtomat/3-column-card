@@ -1,0 +1,21 @@
+// colors
+
+$primary-color: hsl(31, 77%, 52%);
+$secondary-color: hsl(184, 100%, 22%);
+$tertiary-color: hsl(179, 100%, 13%);
+$paragraphs-color: hsla(0, 0%, 100%, 0.75);
+$light-color: hsl(0, 0%, 95%);
+
+// sizes
+
+$base-font-size: 15px;
+
+// font-family
+
+$heading-font: "Big Shoulders Display";
+$primary-font: "Lexend Deca";
+
+@function toRem($value) {
+    $remValue: ($value / 16) + rem;
+    @return $remValue;
+}
